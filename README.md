@@ -4,14 +4,16 @@ A replication of Patel, Worsham, Liu & Jena (2026),
 "[Smartphones, Online Music Streaming, and Traffic Fatalities](https://www.nber.org/papers/w34866),"
 NBER Working Paper 34866 ([local copy](w34866.pdf)).
 
-The paper reports 18.2 extra traffic deaths on the days ten major albums were released and
-attributes them to drivers streaming music. We reproduce that estimate almost exactly, and the
-day-of-week explanation that suggests itself first does not survive any test we can put to it.
-What does not survive is the size: ten treated days cannot detect an effect below 13.4 deaths, and
-across the 27 major releases that are not the paper's own the pooled effect is about six.
-Measured US streaming volume, which the paper's own dose is not, settles it. Seventeen other albums
-had a first day at least as big as the smallest of the paper's ten. Their release days average
-−0.49 deaths. The effect belongs to those ten albums, not to releases that size.
+The paper reports 18.2 additional traffic deaths on ten album-release days. The replication
+estimate is 17.6 (SE 7.45). Random-Friday and adjacent-Friday comparisons indicate that the
+association is not explained by average weekday differences under the tested specifications.
+
+The magnitude varies with the release sample. Across 27 additional major releases, the estimate
+is 6.49 deaths (95% CI −0.16 to 13.13). Among 17 additional albums with measured first-day US
+streams at least as high as the smallest original release, it is −0.49 (SE 2.54).
+The original ten-album design has an 80%-power detection threshold of 13.4 deaths under the
+reported power calculation. These comparisons limit generalization from the ten original dates;
+they do not establish a zero effect for every release or identify the distraction mechanism.
 
 ![Release-day excess against measured first-day US streams](figs/dose_response.png)
 
@@ -21,7 +23,7 @@ The lower panel drops the paper's ten and bins the rest: twenty equal-count bins
 of magnitude of dose, none of them distinguishable from zero, including the bin above the paper's
 own cutoff.
 
-**The argument is in [ms/ms.pdf](ms/ms.pdf).** This file is the replication index.
+The [manuscript](ms/ms.pdf) presents the design, estimates and interpretation.
 
 ## Headline numbers
 
@@ -33,7 +35,7 @@ own cutoff.
 | Same calendar positions, other years | −0.08 (SE 1.48) | [t41](tabs/t41_calendar_position_placebo.md) |
 | Smallest effect ten days can detect | 13.4 deaths | [t23](tabs/t23_power_analysis.md) |
 | The 27 releases that are not the paper's | +6.49, 95% CI [−0.16, +13.13] | [t20](tabs/t20_extended_series.md) |
-| What a true 6.49 publishes, at SE 7.45 | 17.58 | [t36](tabs/t36_publication_filter.md) |
+| Mean significant estimate if the true effect is 6.49, SE 7.45 | 17.58 | [t36](tabs/t36_publication_filter.md) |
 | Weather, from NOAA stations in 51 states | moves it 0.51 deaths | [t43](tabs/t43_exogenous_weather.md) |
 | Ambient listening as the shared shock | −0.0074 deaths per million streams (SE 0.0266) | [t44](tabs/t44_shared_shock.md) |
 | Albums as big as the paper's smallest, that are not the paper's | −0.49 (SE 2.54) over 17 albums | [t47](tabs/t47_dose_matched.md) |
@@ -57,7 +59,7 @@ no dose-response analysis uses.
 
 The daily Spotify Charts top 200 for the US replaces all three where it reaches. It supplies a
 measured dose for 524 albums, a comparison set defined by a rule rather than a list, and the
-ambient listening series needed to test the one confounder the fatality data alone cannot address.
+ambient listening series needed to test a possible common activity pattern.
 Our reconstruction matches the paper's on control days (86.8M against their 86.1) and runs 8% high
 on release days (133.2M against their 123.3), which we cannot account for and which nothing
 downstream depends on. See

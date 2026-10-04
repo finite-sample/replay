@@ -120,7 +120,7 @@ def sp500_placebo(window=10):
     Returns DataFrame with per-album results.
     """
     print(f"\n{'='*70}")
-    print("S&P 500 PLACEBO TEST (Absurd Placebo)")
+    print("S&P 500 PLACEBO COMPARISON")
     print(f"{'='*70}")
     print("Testing effect on stock market returns — NOTHING to do with driving.")
     print("If we find a 'significant' effect, methodology is picking up noise.\n")

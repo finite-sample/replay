@@ -190,7 +190,7 @@ def effect_size_plausibility_check(album_effect):
     Returns
     -------
     dict
-        Verdict and comparison data.
+        Benchmark interpretation and comparison data.
     """
     print("\n" + "=" * 70)
     print("EFFECT SIZE PLAUSIBILITY CHECK")
@@ -267,27 +267,16 @@ def effect_size_plausibility_check(album_effect):
     )
 
     print("\n" + "=" * 70)
-    print("VERDICT: Claimed effect is IMPLAUSIBLE")
+    print("EXPOSURE-NORMALIZED BENCHMARK")
     print("=" * 70)
     print(
         """
-Reasoning:
-  1. PER-DRIVER RISK RATIO: The paper implies listening to a new album
-     while driving is {ratio_low:.0f}-{ratio_high:.0f}x more dangerous per driver-exposure
-     than driving in adverse weather.
+Interpretation:
+  The ratio uses assumed exposure shares for weather and album listening.
+  In-car listening and comparable causal weather exposure are not observed here.
+  The calculation illustrates how the implied per-exposure magnitude depends
+  on those assumptions; it does not establish the actual risk to a listener.
 
-  2. WEATHER PHYSICALLY IMPAIRS DRIVING: Reduced visibility, wet/icy roads,
-     longer stopping distances. These are genuine mechanical hazards.
-
-  3. NOT A NOVEL DISTRACTION: Listening to new songs vs. old songs is not
-     a fundamentally different distraction. People already listen to music/
-     radio while driving safely.
-
-  4. MOST STREAMING IS NOT IN-CAR: Majority of streaming occurs at home,
-     work, or via headphones - not while driving.
-
-  5. BENCHMARK: The implied per-listener risk exceeds drunk driving, which
-     has RR ~6-8. The paper implies RR > 10 for album listeners.
 """
     )
 
@@ -310,8 +299,8 @@ Reasoning:
         "deaths_per_1pct_weather": (weather_low, weather_high),
         "deaths_per_1pct_album": (album_low, album_high),
         "danger_ratio": (ratio_low, ratio_high),
-        "verdict": "IMPLAUSIBLE",
-        "reason": "Per-driver risk implied to be 400-2600x higher than weather effects",
+        "interpretation": "conditional_on_assumed_exposure",
+        "reason": "Comparison depends on assumed, unobserved exposure shares",
     }
 
 
@@ -332,7 +321,7 @@ def holiday_benchmark(daily_df, albums=None):
     All nine federal holidays in `us_holidays` are reported, not a chosen
     subset. Three of them (MLK Day, Presidents Day, Veterans Day) show no
     excess at all, so "as deadly as a federal holiday" is not a statement the
-    data support; the comparison that survives is with the travel holidays.
+    data support; travel holidays provide a within-data comparison.
 
     Both a month and a week-of-year seasonal baseline are run. The release-day
     figure is the same either way; holiday levels move by up to four deaths,
@@ -435,7 +424,7 @@ def holiday_benchmark(daily_df, albums=None):
 
 def holiday_adjacency_robustness(daily_df, albums=None, window=10):
     """
-    Does the estimate survive the releases that sit next to a federal holiday?
+    How does the estimate change after excluding releases adjacent to federal holidays?
 
     Two of the ten Tier 1 releases are holiday-adjacent: Certified Lover Boy on
     the Friday of Labor Day weekend, and Red (Taylor's Version) the day after
@@ -563,8 +552,8 @@ def publication_filter(
     computed rather than asserted.
 
     For each candidate true effect this draws n_albums observations, runs the
-    t-test an analyst would run, and reports what the surviving estimates look
-    like: how often they survive, their mean, and how often they reach the
+    t-test an analyst would run, and reports what the significant estimates look
+    like: how often they meet the threshold, their mean, and how often they reach the
     replicated 17.6.
 
     Returns DataFrame with one row per candidate true effect.
@@ -817,23 +806,23 @@ def weather_effect_sanity_check(daily_df):
         status = ""
         if expected_range:
             if effect < 0:
-                status = "WRONG SIGN (negative)"
+                status = "NEGATIVE ESTIMATE"
                 concerns.append(f"{var}: coefficient is negative ({effect:+.1f})")
             elif effect < expected_range[0] * 0.5:
-                status = "TOO SMALL"
+                status = "BELOW ASSUMED RANGE"
             elif effect > expected_range[1] * 3:
-                status = "TOO BIG"
+                status = "ABOVE ASSUMED RANGE"
                 lo, hi = expected_range
                 concerns.append(
                     f"{var}: effect too large ({effect:+.1f} vs expected {lo}-{hi})"
                 )
             else:
-                status = "PLAUSIBLE"
+                status = "WITHIN ASSUMED RANGE"
 
         print(f"  {var}: {effect:+.1f} deaths — {status}")
 
     print("\n" + "=" * 70)
-    print("6. SANITY CHECK VERDICT")
+    print("6. WEATHER BENCHMARK SUMMARY")
     print("=" * 70)
 
     if concerns:

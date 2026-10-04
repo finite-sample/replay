@@ -5,7 +5,7 @@ The weather variables elsewhere in this repository are shares of a day's fatal
 crashes that occurred in rain, fog, cloud or snow. Numerator and denominator
 are both the outcome, so conditioning on them is conditioning on a
 post-treatment variable and they cannot support the claim that the effect
-survives a weather control.
+changes with a weather control.
 
 This builds a control that can. Daily precipitation comes from NOAA
 GHCN stations, pulled through the get-weather-data package, for the largest
@@ -232,7 +232,7 @@ def build_national_weather(state_daily, weights):
 
 def exogenous_weather_model(daily_df, national_weather, albums=None, window=10):
     """
-    Does the release-day effect survive a weather control that is actually weather?
+    How does the release-day estimate change with independently measured weather?
 
     Adds fatality-weighted daily precipitation to the fixed-effect model,
     refits on the donut sample, and reads the effect off the release days. The

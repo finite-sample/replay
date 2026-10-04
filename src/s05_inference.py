@@ -291,7 +291,9 @@ def robustness_to_one_day(df_global, albums=None, n_sims=20000, seed=42):
     print("\nINTERPRETATION:")
     print("  The mean exceeds the median because one album is far out, but the")
     print("  rank statistics and the trimmed mean agree with it in sign and")
-    print("  significance, and the estimate survives dropping that album.")
+    print(
+        "  significance, and the estimate remains significant after dropping that album."
+    )
 
     return results_df
 

@@ -740,7 +740,7 @@ def weather_controlled_model(daily_df, window=10):
     outcome and conditioning on them is conditioning on a post-treatment
     variable. That they leave the estimate alone is evidence that release days
     are not unusual weather days, which is worth knowing. It is not evidence
-    that the effect survives an exogenous weather control, because there is no
+    that the estimate is unchanged by an exogenous weather control, because there is no
     exogenous weather control here. See release_day_weather for the balance
     tests and for what a real fix would require.
 
@@ -857,7 +857,7 @@ def weather_controlled_model(daily_df, window=10):
 
 def dow_interaction_models(daily_df, window=10):
     """
-    Does the release-day estimate survive letting Friday differ by season and year?
+    How does the release-day estimate change when Friday differs by season and year?
 
     The random-Friday placebo can only detect an additive day-of-week effect,
     because the baseline model already contains day-of-week dummies and so
