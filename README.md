@@ -1,4 +1,4 @@
-# REPLAY
+# replay: album releases, streaming, and traffic fatalities revisited
 
 A replication of Patel, Worsham, Liu & Jena (2026),
 "[Smartphones, Online Music Streaming, and Traffic Fatalities](https://www.nber.org/papers/w34866),"
