@@ -89,7 +89,7 @@ def power_analysis(
 
     # The calculation is only as relevant as the estimator it models, and there
     # are three candidate standard errors for one quantity. Running all three
-    # shows which way the choice cuts: the null SE is the most favourable to
+    # shows which way the choice cuts: the null SE is the most favorable to
     # the published estimate, and it is the one quoted in the text.
     se_options = [
         ("null (residual SD / sqrt n)", se_null),

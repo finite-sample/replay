@@ -59,7 +59,7 @@ Fatality Analysis Reporting System extract gives $+\numEffectRegression$ deaths
 ($SE = \numSEClustered$, clustered by album). Weekday comparisons do not account for the estimated association under the tested specifications: ten Fridays
 drawn at random reach the observed effect \numFridayPlaceboDraws{} times in ten thousand, the mean
 Friday residual after the paper's fixed effects is a seventh of a death, and a model-free contrast
-of each release against its own neighbouring Fridays gives $+\numEffectAdjacentFriday$, a ratio
+of each release against its own neighboring Fridays gives $+\numEffectAdjacentFriday$, a ratio
 the original authors also report. Applying the estimator to the same calendar positions in other
 years returns \numEffectCalendarPlacebo{}.
 
@@ -113,7 +113,7 @@ The weekday diagnostics indicate that average Friday differences do not account 
 estimated release association under the tested specifications. Ten Fridays drawn at random reach the observed effect \numFridayPlaceboDraws{} times in ten
 thousand; the comparison is unchanged by whether weekday fixed effects are in the model at all;
 letting the Friday effect vary by season and by year moves the estimate by about a death; a
-contrast of each release against its own neighbouring Fridays, which uses no model, recovers a
+contrast of each release against its own neighboring Fridays, which uses no model, recovers a
 ratio the original authors also report; and applying the estimator to the same calendar positions
 in other years returns \numEffectCalendarPlacebo{}. The day $-6$ coefficient that looks like a
 pre-trend is a Saturday, and the actual previous Friday is flat.
@@ -144,7 +144,7 @@ Using FARS data for 2007--2024 and the ten Tier 1 albums listed in \citet{patel2
 The reported and replicated estimates are close. \citeauthor{patel2026smartphones} report $+18.2$
 deaths. We estimate $+\numEffectRegression$ deaths ($SE = \numSEClustered$), a
 \numPctRegression\% increase on a control-day mean of \numControlMean{} fatalities, which is the
-analogue of the 120.9 they report. The point estimates differ by \numDiffFromPaper{} deaths, well
+analog of the 120.9 they report. The point estimates differ by \numDiffFromPaper{} deaths, well
 within one standard error.
 
 Our wider standard error reflects album-level clustering, which is the natural adjustment when
@@ -232,7 +232,7 @@ year, from 37 to 390 parameters, the estimate stays between \numEffectDowInterac
 The event study appears at first to say otherwise, with a coefficient of $+16.5$ on day $-6$,
 nearly the size of the release-day coefficient. Day $-6$ is not the previous Friday. For nine of
 the ten albums it is the Saturday before release. The previous Friday is day $-7$, at $+3.8$
-($t = 0.92$), and the following Friday is day $+7$, at $-0.3$. Both same-weekday neighbours are
+($t = 0.92$), and the following Friday is day $+7$, at $-0.3$. Both same-weekday neighbors are
 quiet, which is the adjacent-Friday contrast read off the event study. A joint test of flatness
 across the ten pre-treatment days, flipping the sign of each album's whole residual vector so that
 the correlation induced by using the same ten albums for every coefficient is respected, returns
@@ -240,7 +240,7 @@ $p = 0.19$; dropping day $-6$ returns $p = 0.70$.
 
 \subsection{Calendar Position}
 
-Labels choose release dates, so the dates are not random. If the choice favours positions that are
+Labels choose release dates, so the dates are not random. If the choice favors positions that are
 also high-risk, the estimate picks that up. Applying each album's date to every other year in the
 series, matched to the nearest same weekday, reproduces the seasonal and holiday context without
 the album. Those \numNCalendarPlacebo{} placebo dates average \numEffectCalendarPlacebo{} deaths
@@ -336,7 +336,7 @@ the mechanism needs an increment over the artist's ordinary streaming.
 
 Applying the estimator to variables that describe the crashes rather than counting them turns up
 one result. Mean crash latitude is $+0.37$ degrees on release days ($t = 2.91$). This is not a
-placebo failure, because latitude summarises the same crashes whose count is the outcome and is
+placebo failure, because latitude summarizes the same crashes whose count is the outcome and is
 therefore not independent of treatment. Neither is it demonstrably a composition artifact: if the
 extra crashes dragged the mean, albums with the largest excess would show the largest shift, and
 the correlation across the ten is \numRLatitudeExcess{} ($p = \numPLatitudeExcess$), with
@@ -388,7 +388,7 @@ the paper's ten shows no release-day excess, unless it is one of the paper's ten
 are $\numNDoseMatched$ such albums and they average $\numEffectDoseMatched$ deaths
 ($SE = \numEffectDoseMatchedSE$, 95\% CI $[\numEffectDoseMatchedLo,
 \numEffectDoseMatchedHi]$), against $+\numEffectResidual$ for the ten. The comparison set
-is a rule rather than a judgement about which releases were major: reach
+is a rule rather than a judgment about which releases were major: reach
 $\numDoseCut$ million first-day US streams and you are in it.
 
 Getting to that comparison took two corrections to the paper's dose. The first is that

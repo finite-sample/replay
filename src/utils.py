@@ -21,7 +21,7 @@ EMIT_TEX = True
 
 def album_stats(values, alpha=0.05):
     """
-    Summarise a set of per-album effects.
+    Summarize a set of per-album effects.
 
     Album-level effects are averages over a handful of treated units, so the
     standard error uses the sample standard deviation (ddof=1) and critical

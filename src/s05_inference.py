@@ -203,7 +203,7 @@ def robustness_to_one_day(df_global, albums=None, n_sims=20000, seed=42):
     recomputed with the single most influential album removed.
 
     The randomization p-value for the median compares the observed median with
-    medians of ten days drawn at random, which is the rank analogue of the
+    medians of ten days drawn at random, which is the rank analog of the
     randomization inference run on the mean elsewhere.
 
     Returns DataFrame with one row per statistic.
