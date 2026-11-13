@@ -456,7 +456,7 @@ def _modal_weekday(day_offset):
 
     Nine of the ten releases are Fridays, so day -7 and +7 are Fridays and
     day -6 is a Saturday. Naming the weekday in the output stops the event
-    study from being read as though the neighbouring same-weekday days were
+    study from being read as though the neighboring same-weekday days were
     somewhere else in the window.
     """
     names = [

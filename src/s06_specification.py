@@ -583,7 +583,7 @@ def release_day_weather(accidents, albums=None, window=10):
     That second question matters because these shares are computed from the
     crashes that happened, not from weather stations. They are a composition
     measure of the outcome rather than an exogenous covariate, so conditioning
-    on them risks controlling for a consequence of treatment. The defence is
+    on them risks controlling for a consequence of treatment. The defense is
     not that the risk is theoretical but that the shares do not move on release
     days, which is reported here. A cleaner design would use station weather
     weighted by population; this repository does not have it.

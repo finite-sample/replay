@@ -156,7 +156,7 @@ class TestColumnNormalisation:
     """FARS is inconsistent about column case across vintages.
 
     The 2007 file names its coordinates `latitude` and `longitud`; every later
-    file uses upper case. Concatenating without normalising gives two columns
+    file uses upper case. Concatenating without normalizing gives two columns
     for one variable, so `df["LATITUDE"]` returns a DataFrame and any code
     building `{c.upper(): c for c in df.columns}` silently keeps one and drops
     the other year's values.

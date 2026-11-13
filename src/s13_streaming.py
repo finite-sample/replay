@@ -247,7 +247,7 @@ def paper_album_keys(first_day, albums=None):
     nine albums the paper never studied, at doses an order of magnitude below
     the real ones. The key is lead artist and date together.
 
-    Lead artist needs normalising because a joint credit is stored two ways.
+    Lead artist needs normalizing because a joint credit is stored two ways.
     Her Loss is "Drake & 21 Savage" in the album list and "Drake|21 Savage" in
     the chart, whose lead is "Drake".
     """
@@ -281,7 +281,7 @@ def dose_matched_contrast(per_album, first_day, albums=None, years=(2018, 2022))
 
     This is a rule, not a list. Nothing about it depends on which albums anyone
     considered major, and the comparison albums are matched on the paper's own
-    treatment intensity rather than on a judgement about fame.
+    treatment intensity rather than on a judgment about fame.
 
     The year restriction is reported because the comparison albums run to 2024
     while the paper's stop in 2022. It is a check, not the headline: the

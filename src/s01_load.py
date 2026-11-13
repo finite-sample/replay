@@ -76,10 +76,10 @@ def load_local_fars(directory="."):
     """
     Load FARS Accident CSVs downloaded manually from NHTSA.
 
-    Column names are normalised to upper case before concatenation. FARS is
+    Column names are normalized to upper case before concatenation. FARS is
     not consistent about case across vintages: the 2007 file names its
     coordinate columns `latitude` and `longitud` while every later file uses
-    `LATITUDE` and `LONGITUD`. Concatenating without normalising produces two
+    `LATITUDE` and `LONGITUD`. Concatenating without normalizing produces two
     columns for one variable, so `df["LATITUDE"]` returns a DataFrame rather
     than a Series and any code doing `{c.upper(): c for c in df.columns}`
     silently keeps whichever came last, dropping the other year's values.
@@ -87,7 +87,7 @@ def load_local_fars(directory="."):
     The 2021 and 2022 files also carry a UTF-8 byte-order mark, which makes
     their first column `\ufeffSTATE` rather than `STATE`. Any lookup by name
     misses it, silently, for exactly those two years. Both problems are
-    normalised away here rather than worked around at each call site.
+    normalized away here rather than worked around at each call site.
     """
     frames = []
     for f in sorted(Path(directory).glob("*ccident*.csv")):

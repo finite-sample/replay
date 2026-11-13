@@ -374,7 +374,7 @@ def friday_placebo_test(df_global, n_sims=10000, n_pick=10, seed=42):
     and ask how often the placebo reaches the observed effect.
 
     Draws are from `resid_global`, which already nets out day-of-week, month, year
-    and holiday fixed effects, so the null distribution is centred at zero by
+    and holiday fixed effects, so the null distribution is centered at zero by
     construction. That is the point: after the paper's controls there is no Friday
     contrast left for a placebo to pick up.
 
@@ -657,7 +657,7 @@ def calendar_position_placebo(df_global, albums=None, window=10):
     """
     Are these calendar positions dangerous, album or no album?
 
-    Labels choose release dates, so the dates are not random. If they favour
+    Labels choose release dates, so the dates are not random. If they favor
     positions that are also high-risk, a holiday weekend or the start of a
     travel season, the release-day estimate picks that up. The test applies
     each album's calendar position to every other year in the series, matched
@@ -846,7 +846,7 @@ def adjacent_friday_contrast(daily_df, albums=None, offsets=(-14, -7, 7, 14)):
     The random-Friday placebo already answers the day-of-week objection, but it
     answers it through a model: the comparison runs on residuals from a fixed
     effects fit. This does not. For each Friday release it compares the release
-    day with the same album's own neighbouring Fridays, so the contrast is held
+    day with the same album's own neighboring Fridays, so the contrast is held
     at the same weekday, the same season and the same year by construction, and
     no dummy has to do any absorbing.
 
@@ -855,7 +855,7 @@ def adjacent_friday_contrast(daily_df, albums=None, offsets=(-14, -7, 7, 14)):
     even though it agrees in magnitude with the fixed-effects estimate. Patel
     et al. run the same comparison and report an odds ratio of 1.10.
 
-    Donda is excluded: it is the one Sunday release, and it has no neighbouring
+    Donda is excluded: it is the one Sunday release, and it has no neighboring
     Fridays to be compared with.
 
     Returns DataFrame with one row per album and a pooled row.
